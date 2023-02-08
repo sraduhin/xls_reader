@@ -21,7 +21,7 @@ class Data(Base):
     created_at = Column(Date)
     
     def __repr__(self):
-        return f"Check for {self.company} at the date"
+        return f"Row for {self.company} at {self.created_at}"
 
 # direct call cleans table
 if __name__ == "__main__":
