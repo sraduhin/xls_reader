@@ -1,6 +1,6 @@
 from app.models import Data
 from app.utils import get_fields_name
-from sqlalchemy import and_, text, sql
+from sqlalchemy import and_, sql
 from db import db_session
 
 def get_all():
@@ -37,16 +37,15 @@ def get_total(start_date, end_date):
         sql.func.sum(Data.qliq_2_frcst),
         sql.func.sum(Data.qoil_1_frcst),
         sql.func.sum(Data.qoil_2_frcst),
-    ).group_by(Data.company).filter(Data.created_at >= start_date).filter(Data.created_at <= end_date).all()
+    ).group_by(Data.company).filter(and_(Data.created_at >= start_date, Data.created_at <= end_date)).all()
     columns = get_fields_name(Data)
     columns = [f'total_{i}' for i in columns[2:-1]]
-    print(query)
     print('{:^10} | {:^9} | {:^9} | {:^9} | {:^9} | {:^9} | {:^9} | {:^9} | {:^9}'.format('', *columns))
+    print('-' * 180)
     fmt = '{:10s} | {:16d} | {:16d} | {:16d} | {:16d} | {:17d} | {:17d} | {:17d} | {:17d}'
     for row in query:
-        for i in row:
-            print(fmt.format(*i))
-    print('-' * 140)
+        print(fmt.format(*row))
+    print('-' * 180)
 
 
 if __name__ == "__main__":

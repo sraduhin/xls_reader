@@ -13,5 +13,8 @@ start:
 docker-start:
 	docker-compose up
 
+example:
+	poetry run parser "files/Приложение к заданию бек разработчика.xlsx"
+
 clean-db:
 	poetry run python app/models.py
