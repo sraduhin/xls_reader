@@ -7,13 +7,13 @@ services:
     command: poetry run python app/models.py
     volumes:
       - .:/app/
-    environment:
-      - DOCKER_ENV=true
     depends_on:
       - db
+    environment:
+      - DOCKER_ENV=true
     
   db:
-    image: postgres
+    image: postgres:12
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=postgres

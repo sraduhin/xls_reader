@@ -17,6 +17,7 @@ RUN apt-get update && apt-get upgrade -y \
     && curl -sSL 'https://install.python-poetry.org' | python - \
     && poetry --version
 
+
 WORKDIR /app
 
 COPY poetry.lock pyproject.toml /app/
@@ -25,3 +26,4 @@ COPY . /app/
 
 RUN poetry install
 
+ENTRYPOINT [ "./script.sh" ]
