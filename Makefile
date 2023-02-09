@@ -5,7 +5,7 @@ docker-install:
 	docker-compose build
 
 lint:
-	poetry run flake8
+	poetry run flake8 --exclude .venv
 
 example:
 	poetry run parser "files/Приложение к заданию бек разработчика.xlsx"

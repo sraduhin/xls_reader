@@ -22,6 +22,5 @@ def main():
     get_total(start, end)
 
 
-
 if __name__ == '__main__':
     main()

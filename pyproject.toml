@@ -18,9 +18,10 @@ prompt = "^0.4.1"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.9.0"
+flake8 = "^6.0.0"
 
 [tool.poetry.scripts]
-parser = "app.scripts.enterpoint:main"
+parser = "app.scripts.entrypoint:main"
 
 [build-system]
 requires = ["poetry-core"]

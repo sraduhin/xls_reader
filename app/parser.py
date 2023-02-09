@@ -11,15 +11,20 @@ def parse(filepath, timestamper=fake_data):
 
     bulk_data = []
     for i in range(3, worksheet.max_row):
-        row = [col[i].value for col in worksheet.iter_cols(2, worksheet.max_column)]
+        row = [
+            col[i].value for col in worksheet.iter_cols(
+                2, worksheet.max_column
+            )
+        ]
         #  cut two last empty cells and add random date
         dict_row = {
-            k: v for k,v in zip(
+            k: v for k, v in zip(
                 fields, row[:-2] + [timestamper()]
             )
         }
         bulk_data.append(dict_row)
     load(bulk_data)
+
 
 if __name__ == "__main__":
     parse()

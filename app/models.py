@@ -12,16 +12,17 @@ class Data(Base):
     qliq_2_fact = Column(Integer)
     qoil_1_fact = Column(Integer)
     qoil_2_fact = Column(Integer)
-    
+
     qliq_1_frcst = Column(Integer)
     qliq_2_frcst = Column(Integer)
     qoil_1_frcst = Column(Integer)
     qoil_2_frcst = Column(Integer)
 
     created_at = Column(Date)
-    
+
     def __repr__(self):
         return f"Row for {self.company} at {self.created_at}"
+
 
 # direct call cleans table
 if __name__ == "__main__":
