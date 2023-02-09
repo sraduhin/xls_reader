@@ -42,7 +42,7 @@ def get_total(start_date, end_date):
     columns = [f'total_{i}' for i in columns[2:-1]]
     print('{:^10} | {:^9} | {:^9} | {:^9} | {:^9} | {:^9} | {:^9} | {:^9} | {:^9}'.format('', *columns))
     print('-' * 180)
-    fmt = '{:10s} | {:16d} | {:16d} | {:16d} | {:16d} | {:17d} | {:17d} | {:17d} | {:17d}'
+    fmt = '{:10s} | {:17d} | {:17d} | {:17d} | {:17d} | {:18d} | {:18d} | {:18d} | {:18d}'
     for row in query:
         print(fmt.format(*row))
     print('-' * 180)
