@@ -48,6 +48,6 @@ poetry run parser <filepath>
 ```
 # Как это работает. Пример с установкой.
 #### Docker
-https://asciinema.org/a/SLn9ZaAtHO34K2WgvRgFXCNdJ
+<a href="https://asciinema.org/a/SLn9ZaAtHO34K2WgvRgFXCNdJ" target="_blank"><img src="https://asciinema.org/a/SLn9ZaAtHO34K2WgvRgFXCNdJ.svg" /></a>
 #### Local
-https://asciinema.org/a/VxVNCFpA5o4WXm743lIIGFnvY
+<a href="https://asciinema.org/a/VxVNCFpA5o4WXm743lIIGFnvY" target="_blank"><img src="https://asciinema.org/a/VxVNCFpA5o4WXm743lIIGFnvY.svg" /></a>
