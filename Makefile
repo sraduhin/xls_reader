@@ -7,14 +7,14 @@ docker-install:
 lint:
 	poetry run flake8
 
-start:
-	poetry run python app/parser.py
-
-docker-start:
-	docker-compose up
-
 example:
 	poetry run parser "files/Приложение к заданию бек разработчика.xlsx"
 
+docker-db:
+	docker-compose run python_app poetry run python app/models.py
+
+docker-example:
+	docker-compose run python_app poetry run parser "files/Приложение к заданию бек разработчика.xlsx"
+	
 clean-db:
 	poetry run python app/models.py
