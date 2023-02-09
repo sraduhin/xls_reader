@@ -1,22 +1,48 @@
 # xls parser
 #### Тестовое задание "Написать парсер для xls файла".
-#### Запуск приложения выполняется через docker контейнер, либо
+
+Запуск приложения выполняется через docker контейнер,
+либо непосредственно из терминала с предварительной установкой зависимостей (через Poetry)
+и возможностью подлкючения к БД.
+
 #### Установка
 ```python
 # Склонировать репозиторий
 git clone https://github.com/sraduhin/xls_reader.git
-
 cd xls_reader
+```
+В директории уже находится xls файл к тестовому заданию. Но если необходимо протестировать другой файл
+с идентичной структурой, необходимо разместить его в директории приложения.
 
-# Необходимо добавить в директорию xls файл по структуре идентичный,
-# приложенному к заданию, либо воспользоваться 
-# create .env file and add variables
-SECRET_KEY={your secret key}
-POST_SERVER_ITEM_ACCESS_TOKEN='project access token from rollbar.com'
-
-
-make install # install dependencies
-
-make dev # use local
-make start # or deploy with start command
+#### Запуск через Docker
+```python
+# сборка образа
+docker-compose build
+```
+```python
+# создание таблиц
+make docker-db
+```
+```python
+# запуск точки входа с уже готовой фикстурой
+make docker-example
+```
+```python
+# либо парсинг своего файла
+docker-compose run python_app poetry run parser <filepath>
+```
+#### Локальный запуск предполагает установку зависимостей и создание переменных окружения (.env) для подключения к БД. Смотри .env.example
+```python
+# установка зависимостей
+make install
+# формирование таблиц
+make clean-db
+```
+```python
+# запуск точки входа с уже готовой фикстурой
+make example
+```
+```python
+# либо парсинг своего файла
+python_app poetry run parser <filepath>
 ```
