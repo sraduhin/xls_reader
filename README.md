@@ -44,5 +44,10 @@ make example
 ```
 ```python
 # либо парсинг своего файла
-python_app poetry run parser <filepath>
+poetry run parser <filepath>
 ```
+# Как это работает. Пример с установкой.
+#### Docker
+https://asciinema.org/a/SLn9ZaAtHO34K2WgvRgFXCNdJ
+#### Local
+https://asciinema.org/a/VxVNCFpA5o4WXm743lIIGFnvY
